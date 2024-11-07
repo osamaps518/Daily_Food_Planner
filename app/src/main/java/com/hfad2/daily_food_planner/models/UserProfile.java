@@ -15,6 +15,9 @@ public class UserProfile {
     private int age;
     private int dailyCalorieTarget;
 
+    public UserProfile() {
+    }
+
     public UserProfile(float height, float weight, Gender gender, ActivityLevel activityLevel, LocalDate dateOfBirth) {
         this.height = height;
         this.weight = weight;
