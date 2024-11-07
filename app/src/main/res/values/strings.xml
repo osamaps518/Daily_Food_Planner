@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Daily_Food_Planner</string>
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
