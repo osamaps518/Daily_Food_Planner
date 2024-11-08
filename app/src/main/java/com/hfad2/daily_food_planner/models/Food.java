@@ -1,6 +1,12 @@
 package com.hfad2.daily_food_planner.models;
+import androidx.annotation.NonNull;
+
 import com.hfad2.daily_food_planner.enums.FoodCategory;
-public class Food {
+
+import java.io.Serializable;
+
+// Need to make the class Serializable to allow it's transfer between activities
+public class Food implements Serializable {
     private String name;
     private int calories;
     private FoodCategory category;
@@ -11,6 +17,12 @@ public class Food {
         this.calories = calories;
         this.category = category;
         this.description = description;
+    }
+
+    @NonNull
+    @Override
+    public String toString(){
+        return this.name;
     }
 
     public String getName() {

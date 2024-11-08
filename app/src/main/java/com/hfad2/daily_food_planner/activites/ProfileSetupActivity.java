@@ -1,6 +1,7 @@
 package com.hfad2.daily_food_planner.activites;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -17,9 +18,13 @@ import com.hfad2.daily_food_planner.R;
 import com.hfad2.daily_food_planner.enums.ActivityLevel;
 import com.hfad2.daily_food_planner.enums.Gender;
 import com.hfad2.daily_food_planner.models.UserProfile;
+import com.hfad2.daily_food_planner.utils.SelectedFoodsManager;
+import com.hfad2.daily_food_planner.utils.UserProfileManager;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import org.threeten.bp.LocalDate;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -143,6 +148,25 @@ public class ProfileSetupActivity extends AppCompatActivity {
         spnActivityLevel = findViewById(R.id.spnActivityLevel);
         btnSubmit = findViewById(R.id.btnSubmit);
     }
+//
+//    private void handleHeightWeightInput() {
+//        btnSubmit.setOnClickListener(v -> {
+//            if (validateSecondForm()) {
+//                // Get height and weight values
+//                float height = Float.parseFloat(edtHeight.getText().toString());
+//                float weight = Float.parseFloat(edtWeight.getText().toString());
+//
+//                // Set them in the user profile
+//                userProfile.setHeight(height);
+//                userProfile.setWeight(weight);
+//
+//                // Show success message
+//                Toast.makeText(this, "تم حفظ البيانات بنجاح", Toast.LENGTH_SHORT).show();
+//                UserProfileManager.setCurrentProfile(userProfile);
+//                UserProfileManager.setProfileIsReady(true);
+//            }
+//        });
+//    }
 
     private void handleHeightWeightInput() {
         btnSubmit.setOnClickListener(v -> {
@@ -155,12 +179,19 @@ public class ProfileSetupActivity extends AppCompatActivity {
                 userProfile.setHeight(height);
                 userProfile.setWeight(weight);
 
+                // Update the manager
+                UserProfileManager.setCurrentProfile(userProfile);
+                UserProfileManager.setProfileIsReady(true);
+
                 // Show success message
                 Toast.makeText(this, "تم حفظ البيانات بنجاح", Toast.LENGTH_SHORT).show();
+
+                // Start the next activity
+                Intent intent = new Intent(this, FoodSelectionActivity.class);
+                startActivity(intent);
             }
         });
     }
-
     private void handleActivityLevelSelection() {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.activity_levels,
@@ -227,6 +258,4 @@ public class ProfileSetupActivity extends AppCompatActivity {
             return false;
         }
     }
-
-
 }

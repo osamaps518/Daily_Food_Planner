@@ -6,7 +6,9 @@ import com.hfad2.daily_food_planner.enums.Gender;
 import org.threeten.bp.Period;
 import org.threeten.bp.LocalDate;
 
-public class UserProfile {
+import java.io.Serializable;
+
+public class UserProfile implements Serializable {
     private float height;
     private float weight;
     private Gender gender;
