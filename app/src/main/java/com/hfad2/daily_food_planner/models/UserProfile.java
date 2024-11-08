@@ -28,6 +28,10 @@ public class UserProfile {
         this.age = calculateAge();
     }
 
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public int getAge() {
         return age;
     }

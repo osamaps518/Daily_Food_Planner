@@ -4,4 +4,11 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
+    <string-array name="activity_levels">
+        <item>قليل الحركة (لا تمارين)</item>
+        <item>نشاط خفيف (١-٣ مرات/اسبوع)</item>
+        <item>نشاط متوسط (٣-٥ مرات/اسبوع)</item>
+        <item>نشاط عالي (٦-٧ مرات/اسبوع)</item>
+        <item>نشاط مكثف (تمارين شاقة + عمل بدني)</item>
+    </string-array>
 </resources>
