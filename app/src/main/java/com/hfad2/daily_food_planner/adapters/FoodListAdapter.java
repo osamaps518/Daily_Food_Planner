@@ -1,7 +1,6 @@
 package com.hfad2.daily_food_planner.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,54 +30,19 @@ public class FoodListAdapter extends ArrayAdapter<Food> {
             selectedItems.add(false);
         }
     }
-//
-//    @Override
-//    public View getView(final int position, View convertView, ViewGroup parent) {
-//        Food food = foods.get(position);
-//
-//        // Check if an existing view is being reused, otherwise inflate the view
-//        // reuse existing items instead of creating new view for each meal
-//        if (convertView == null) {
-//            convertView = LayoutInflater.from(context).inflate(R.layout.food_list_item, parent, false);
-//        }
-//
-//        // Get references to views in the layout
-//        CheckBox checkBox = convertView.findViewById(R.id.cbFood);
-//        TextView foodName = convertView.findViewById(R.id.tvFoodName);
-//
-//        // Set the food name
-//        foodName.setText(food.getName());
-//
-//        // Set initial state based on global selection
-//        checkBox.setChecked(SelectedFoodsManager.getSelectedFoods().contains(food));
-//
-//        checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
-//            if (isChecked) {
-//                SelectedFoodsManager.addFood(food);
-//            } else {
-//                SelectedFoodsManager.removeFood(food);
-//            }
-//        });
-//
-//        return convertView;
-//    }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        Log.d("FoodListAdapter", "Getting view for position: " + position);
         Food food = foods.get(position);
-        Log.d("FoodListAdapter", "Food at position " + position + ": " + food.getName());
 
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.food_list_item, parent, false);
-            Log.d("FoodListAdapter", "Created new view for position: " + position);
         }
 
         CheckBox checkBox = convertView.findViewById(R.id.cbFood);
         TextView foodName = convertView.findViewById(R.id.tvFoodName);
 
         foodName.setText(food.getName());
-        Log.d("FoodListAdapter", "Set food name: " + food.getName());
 
         // Set initial state based on global selection
         checkBox.setOnCheckedChangeListener(null);

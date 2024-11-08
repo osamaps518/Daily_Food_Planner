@@ -11,4 +11,27 @@
         <item>نشاط عالي (٦-٧ مرات/اسبوع)</item>
         <item>نشاط مكثف (تمارين شاقة + عمل بدني)</item>
     </string-array>
+
+    <string-array name="days_of_week">
+        <item>الأحد</item>
+        <item>الاثنين</item>
+        <item>الثلاثاء</item>
+        <item>الأربعاء</item>
+        <item>الخميس</item>
+        <item>الجمعة</item>
+        <item>السبت</item>
+    </string-array>
+
+    <string-array name="meal_types">
+        <item>الفطور</item>
+        <item>الغداء</item>
+        <item>العشاء</item>
+    </string-array>
+    <string name="breakfast">الفطور</string>
+    <string name="lunch">الغداء</string>
+    <string name="dinner">العشاء</string>
+
+    <string name="daily_calorie_target">السعرات الحرارية اليومية المستهدفة: %d</string>
+    <string name="total_calories">%d سعرة</string>
+    <string name="meal_calories">%d سعرة</string>
 </resources>
